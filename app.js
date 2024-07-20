@@ -125,4 +125,27 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
     ];
+
+    const destinationList = document.getElementById('destination-list');
+
+    function renderDestinations(destinationsToRender) {
+        destinationList.innerHTML = '';
+        destinationsToRender.forEach(destination => {
+            const card = document.createElement('div');
+            card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
+
+            card.innerHTML = `
+                <div class="card">
+                    <img src="${destination.imageUrl}" class="card-img-top" alt="${destination.name}">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>${destination.name}</b></h5>
+                        <p class="card-text">${destination.description}</p>
+                    </div>
+                </div>
+            `;
+          console.log(card)
+            destinationList.appendChild(card);
+        });
+    }
+    renderDestinations(destinations);
 })
