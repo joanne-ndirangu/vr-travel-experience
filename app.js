@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const destinationList = document.getElementById('destination-list');
+    const modalBody = document.getElementById('modal-body');
 
     function renderDestinations(destinationsToRender) {
         destinationList.innerHTML = '';
@@ -140,11 +141,57 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-body">
                         <h5 class="card-title"><b>${destination.name}</b></h5>
                         <p class="card-text">${destination.description}</p>
+                        <button class="btn-tour btn-primary show-details" data-id="${destination.id}">More Details</button>
                     </div>
                 </div>
             `;
           console.log(card)
             destinationList.appendChild(card);
+        });
+        const detailButtons = document.querySelectorAll('.show-details');
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const destinationId = parseInt(button.getAttribute('data-id'));
+                const destination = destinations.find(dest => dest.id === destinationId);
+
+                // Update modal content
+                modalBody.innerHTML = `
+                    <h5 class="card-title"><b>${destination.name}</b></h5>
+                    <img src="${destination.imageUrl}" class="img-fluid mb-3" alt="${destination.name} Image">
+                    <p>${destination.description}</p>
+                     <a href="${destination.virtualTourUrl}" class="btn btn-primary mb-2">Take Virtual Tour</a>
+                    <h6><b>Travel Packages:</b></h6>
+                    <ul class="list-group mb-3">
+                        ${destination.travelPackages.map(pkg => 
+                            `<li class="list-group-item">
+                                <strong>${pkg.name}</strong>: ${pkg.description} (${pkg.price})
+                            </li>`
+                        ).join('')}
+                    </ul>
+                    <button>Book Now</button>
+                    <h6><b>User Reviews:</b></h6>
+                    <div class="card-text">
+                        ${destination.userReviews.map(review => 
+                            `<p><strong>${review.username}</strong> - ${'★'.repeat(review.rating)} ${review.review}</p>`
+                        ).join('')}
+                    </div>
+                    <h6><b>Rate this destination</b></h6>
+                    <form id="rating-form-${destination.id}">
+                        <div class="form-group">
+                            <label for="username-${destination.id}">Username:</label>
+                            <input type="text" id="username-${destination.id}" class="form-control" placeholder="Enter your username">
+                        </div>
+                        <h6>Rating:</h6>
+                    <div class="rating-stars" data-destination-id="${destination.id}">
+                    </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                `;
+
+                $('#detailsModal').modal('show');
+
+                initializeRatingStars(destination.id);
+            });
         });
     }
     renderDestinations(destinations);
