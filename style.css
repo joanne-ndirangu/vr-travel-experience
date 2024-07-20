@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-color: #363532;
     color: white;
-}
+} */
 
 .background {
     background-image: url('https://images.unsplash.com/photo-1707343848552-893e05dba6ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDF8MHwxfGFsbHwxfHx8fHx8fHwxNjgwOTQ4ODAw&ixlib=rb-1.2.1&q=80&w=1080');
@@ -114,8 +114,6 @@ h1 {
     font-size: 96px;
     margin-top: 10px;
 }
-
-
 
 #about-us {
     padding-top: 5px;
