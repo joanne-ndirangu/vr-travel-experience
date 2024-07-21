@@ -159,16 +159,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h5 class="card-title"><b>${destination.name}</b></h5>
                     <img src="${destination.imageUrl}" class="img-fluid mb-3" alt="${destination.name} Image">
                     <p>${destination.description}</p>
-                     <a href="${destination.virtualTourUrl}" class="btn btn-primary mb-2">Take Virtual Tour</a>
-                    <h6><b>Travel Packages:</b></h6>
-                    <ul class="list-group mb-3">
-                        ${destination.travelPackages.map(pkg => 
-                            `<li class="list-group-item">
-                                <strong>${pkg.name}</strong>: ${pkg.description} (${pkg.price})
-                            </li>`
-                        ).join('')}
-                    </ul>
-                    <button>Book Now</button>
+                     <a href="${destination.virtualTourUrl}" class="btn-tour btn-primary mb-2">Take Virtual Tour</a>
+                    <div class="container mt-5">
+                        <h6><b>Travel Packages:</b></h6>
+                        <div class="packages">
+                            ${destination.travelPackages.map(pkg => 
+                                `<div class="package-card">
+                                    <div class="card-header">
+                                        <strong>${pkg.name}</strong>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">${pkg.description}</p>
+                                        <p class="card-text"><strong>Price:</strong> ${pkg.price}</p>
+                                    </div>
+                                    <button class="btn-primary btn-tour m-2">Book Now</button>
+                                </div>`
+                            ).join('')}
+                        </div>
+                    </div>
                     <h6><b>User Reviews:</b></h6>
                     <div class="card-text">
                         ${destination.userReviews.map(review => 
@@ -177,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <h6><b>Rate this destination</b></h6>
                     <form id="rating-form-${destination.id}">
-                        <div class="form-group">
+                        <div class="form-grp">
                             <label for="username-${destination.id}">Username:</label>
                             <input type="text" id="username-${destination.id}" class="form-control" placeholder="Enter your username">
                         </div>
@@ -185,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="rating-stars" data-destination-id="${destination.id}">
                         ${generateStarIcons(destination.id)}
                     </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn-tour btn-primary">Submit</button>
                     </form>
                 `;
 
