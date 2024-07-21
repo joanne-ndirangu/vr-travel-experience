@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
 
             card.innerHTML = `
+            <div>
                 <div class="card">
                     <img src="${destination.imageUrl}" class="card-img-top" alt="${destination.name}">
                     <div class="card-body">
@@ -144,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="btn-tour btn-primary show-details" data-id="${destination.id}">More Details</button>
                     </div>
                 </div>
+            </div>
             `;
           console.log(card)
             destinationList.appendChild(card);

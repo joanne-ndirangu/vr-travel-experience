@@ -182,6 +182,11 @@ h2 {
     overflow: hidden;
 }
 
+.img-about {
+    height: 90vh;
+    width: 100%;
+}
+
 .img-fluid{
     height: 100vh;
     width: 50vw;
@@ -287,4 +292,141 @@ h2 {
     margin: 10px 20px;
     background-color: #363532;
     border-radius: 8px;
+}
+
+#sidebar {
+    display: none;
+}
+
+.open-sidebar, .close-sidebar {
+    padding: 0 20px;
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+   .information h1 {
+    font-size: 48px;
+   }
+.btn {
+    display: flex;
+    align-items: center;
+    margin: 50px 120px;
+}
+.slogan {
+    width: 250px;
+    margin: 20px 0;
+    font-size: 32px;
+    font-style: italic;
+}
+.img-fluid {
+    height: 50vh;
+}
+.img-about {
+    width: 45vw;
+    height: 90vh;
+}
+.links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 70%;
+    transition: right 0.75s ease-out;
+    height: 100%;
+    padding-top: 60px; 
+}
+
+nav {
+    justify-content: space-between;
+    padding: 0 20px;
+    display: flex;
+    align-items: center; /* Ensures logo and hamburger menu are vertically aligned */
+    width: 100%;
+}
+
+nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.open-sidebar {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: auto; /* Aligns the hamburger menu to the right */
+}
+
+#sidebar {
+    display: none;
+}
+
+#sidebar:checked ~ .links {
+    right: 0;
+}
+
+#sidebar:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+}
+
+@media (max-width: 320px) {
+    .header, .footer {
+        padding: 0.5rem;
+    }
+
+    .card {
+        margin: 0.5rem;
+    }
+
+    .card-img-top {
+        height: 150px; /* Adjust height for small screens */
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 1rem; /* Adjust font size for small screens */
+    }
+
+    .card-text {
+        font-size: 0.875rem; /* Adjust font size for small screens */
+    }
+
+    .btn {
+        font-size: 0.75rem; /* Smaller button text */
+        padding: 0.5rem; /* Adjust button padding */
+    }
+
+    /* Adjust layout for very small screens */
+    .container {
+        padding: 0.5rem;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col {
+        margin-bottom: 1rem;
+    }
 }
