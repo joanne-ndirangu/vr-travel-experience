@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <h6>Rating:</h6>
                     <div class="rating-stars" data-destination-id="${destination.id}">
+                        ${generateStarIcons(destination.id)}
                     </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -194,5 +195,28 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    function generateStarIcons(destinationId) {
+        let starsHTML = '';
+        for (let i = 1; i <= 5; i++) {
+            starsHTML += `<span class="star" data-value="${i}">☆</span>`;
+        }
+        return starsHTML;
+    }
+
+    function initializeRatingStars(destinationId) {
+        const ratingStars = document.querySelectorAll(`.rating-stars[data-destination-id="${destinationId}"] .star`);
+        ratingStars.forEach(star => {
+            star.addEventListener('click', function() {
+                const ratingValue = parseInt(star.getAttribute('data-value'));
+                const stars = star.parentNode.querySelectorAll('.star');
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < ratingValue; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+        });
+    }
+    
     renderDestinations(destinations);
 })
