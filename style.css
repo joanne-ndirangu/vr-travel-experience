@@ -388,24 +388,63 @@ nav a {
 }
 
 @media (max-width: 320px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+        display: flex;
+        align-items: center; 
+        width: 100%;
+    }
     .information h1 {
-        font-size: 24px;
+        font-size: 23px;
+        text-wrap: nowrap;
     }
     .btn {
         display: flex;
         align-items: center;
-        margin: 50px 120px;
+        margin: 10px auto;
+        width: auto;
+    }
+    .btn-explore {
+        font-size: 16px;
+        width: auto; 
+        white-space: nowrap; 
+    }
+    .slogan {
+        width: 200px;
+        margin: 20px 0;
+        font-size: 20px;
+        font-style: italic;
+    }
+    .socials {
+        display: none;
+        /* margin-top: 20px;  */
+        /* width: 20px; */
     }
     .header, .footer {
         padding: 0.5rem;
     }
-
+    #about {
+        text-align: center;
+    }
+    .img-about {
+        width: 80vw; 
+        height: 50vh;
+        margin: 0 auto; 
+    }
+    .img-fluid {
+        height: 30vh;
+        width: 100%;
+    }
+    .mission {
+        font-size: 14px;
+    }
     .card {
-        margin: 0.5rem;
+        width: 80vw;
     }
 
     .card-img-top {
-        height: 150px; /* Adjust height for small screens */
+        height: 150px; 
     }
 
     .card-body {
@@ -413,29 +452,30 @@ nav a {
     }
 
     .card-title {
-        font-size: 1rem; /* Adjust font size for small screens */
+        font-size: 1rem; 
     }
 
     .card-text {
-        font-size: 0.875rem; /* Adjust font size for small screens */
+        font-size: 0.875rem; 
     }
 
     .btn {
-        font-size: 0.75rem; /* Smaller button text */
-        padding: 0.5rem; /* Adjust button padding */
+        font-size: 0.75rem; 
+        padding: 0.5rem; 
     }
 
-    /* Adjust layout for very small screens */
     .container {
-        padding: 0.5rem;
+        padding-left: 30px;
+        /* padding: 0.5rem; */
+        /* text-align: center; */
     }
-
-    .row {
-        display: flex;
-        flex-direction: column;
+    #destinations {
+        margin-right: 10px;
     }
-
-    .col {
-        margin-bottom: 1rem;
+    #tours {
+        margin-right: 10px;
+    }
+    #profile img {
+        display: none;
     }
 }

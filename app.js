@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="${destination.imageUrl}" class="img-fluid mb-1" alt="${destination.name} Image">
                     <p>${destination.description}</p>
                      <a href="${destination.virtualTourUrl}" class="btn-tour btn-primary mb-2">Take Virtual Tour</a>
-                    <div class="container mt-5">
+                    <div class="container mt-5 mb-4 col-sm-12">
                         <h6><b>Travel Packages:</b></h6>
                         <div class="packages">
                             ${destination.travelPackages.map(pkg => 
