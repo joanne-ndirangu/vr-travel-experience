@@ -188,8 +188,8 @@ h2 {
 }
 
 .img-fluid{
-    height: 100vh;
-    width: 50vw;
+    height: 50vh;
+    width: 40vw;
 }
 
 .logo-2 {
@@ -305,9 +305,9 @@ h2 {
 
 
 @media (max-width: 768px) {
-   .information h1 {
+.information h1 {
     font-size: 48px;
-   }
+}
 .btn {
     display: flex;
     align-items: center;
@@ -327,6 +327,7 @@ h2 {
     height: 90vh;
 }
 .links {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
@@ -387,6 +388,14 @@ nav a {
 }
 
 @media (max-width: 320px) {
+    .information h1 {
+        font-size: 24px;
+    }
+    .btn {
+        display: flex;
+        align-items: center;
+        margin: 50px 120px;
+    }
     .header, .footer {
         padding: 0.5rem;
     }

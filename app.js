@@ -133,10 +133,9 @@ document.addEventListener('DOMContentLoaded', function() {
         destinationList.innerHTML = '';
         destinationsToRender.forEach(destination => {
             const card = document.createElement('div');
-            card.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
+            card.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'mb-4');
 
             card.innerHTML = `
-            <div>
                 <div class="card">
                     <img src="${destination.imageUrl}" class="card-img-top" alt="${destination.name}">
                     <div class="card-body">
@@ -145,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="btn-tour btn-primary show-details" data-id="${destination.id}">More Details</button>
                     </div>
                 </div>
-            </div>
             `;
           console.log(card)
             destinationList.appendChild(card);
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Update modal content
                 modalBody.innerHTML = `
                     <h5 class="card-title"><b>${destination.name}</b></h5>
-                    <img src="${destination.imageUrl}" class="img-fluid mb-3" alt="${destination.name} Image">
+                    <img src="${destination.imageUrl}" class="img-fluid mb-1" alt="${destination.name} Image">
                     <p>${destination.description}</p>
                      <a href="${destination.virtualTourUrl}" class="btn-tour btn-primary mb-2">Take Virtual Tour</a>
                     <div class="container mt-5">
