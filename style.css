@@ -332,6 +332,53 @@ input {
     margin: 15px;
 }
 
+footer {
+    background-color: #646363;
+}
+
+.social img {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.social a {
+    text-decoration: none; 
+    margin-right: 5px; 
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: #333;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    gap: 100px;
+    margin-left: 20px;
+}
+
+.contact1 {
+    text-align: center;
+}
+
+.contact2 a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 20px;
+}
+.contact2 {
+    display: flex; 
+    gap: 50px;
+}
+
+.copyright {
+    font-size: 20px;
+    text-align: center;
+}
+
+.con {
+    padding-top: 40px;
+}
+
 
 @media (max-width: 768px) {
 .information h1 {
