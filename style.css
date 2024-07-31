@@ -73,6 +73,15 @@ nav a:hover{
     color: rgb(95, 95, 95);
 }
 
+.profile {
+    display: flex;
+    gap: 10px;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
 .sign-up a {
     text-decoration: none;
     color: black;
@@ -359,7 +368,7 @@ footer {
 }
 
 .contact1 {
-    text-align: center;
+    text-align: left;
 }
 
 .contact2 a {
