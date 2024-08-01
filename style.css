@@ -403,6 +403,8 @@ footer {
     background-size: cover;
     background-position: center;
     margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
 }
 
 .info {
