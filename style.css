@@ -60,7 +60,8 @@ header {
 }
 
 nav {
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -75,7 +76,12 @@ nav a:hover{
 
 .profile {
     display: flex;
+    align-items: center;
     gap: 10px;
+}
+
+.profile p {
+    margin: 0;
 }
 
 .profile img {
