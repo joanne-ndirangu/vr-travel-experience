@@ -344,7 +344,7 @@ input {
     display: none;
 }
 
-#sign-in {
+#sign-in, #loginSection {
     overflow: hidden;
     margin: 15px;
 }

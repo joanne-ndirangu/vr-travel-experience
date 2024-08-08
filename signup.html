@@ -35,19 +35,20 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-submit" value="Sign Up">
                         </div>
-                        <p class="sign-up"><u>Already have an account? <a href="" class="text-white">Log In</a></u></p>
+                        <p class="sign-up"><u>Already have an account? <a href="#" class="text-white" onclick="toggleForms('login')">Log In</a></u></p>
                     </form>
                 </div>            
             </div>
         </div>
     </section>
-    <section id="login" class="mt-5 mb-5" style="display: none;">
+    <section id="loginSection" class="mt-3 mb-1 d-none">
         <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1721908919515-fbda004d6548?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8" class="img-about" alt="Image 3">
+            </div>
             <div class="col-md-6">
                 <div class="logo-2">
                     <img src="https://i.pinimg.com/474x/f5/a4/de/f5a4de2d510c026e12610592cb074a33.jpg" alt="">
-                        <!-- Welcome to Virtual Reality Travel Experience, where we bring the world to your fingertips through immersive virtual tours. -->
-                    </img>
                     <h2 class="text-white">Log In</h2>
                 </div>
                 <div class="container mt-5">
@@ -63,16 +64,25 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-submit" value="Log In">
                         </div>
-                        <p class="sign-up"><u>Don't have an account? <a href="#" class="text-white" onclick="showSignUpForm()">Sign Up</a></u></p>
+                        <p class="sign-up"><u>Don't have an account? <a href="#" class="text-white" onclick="toggleForms('sign-in')">Sign Up</a></u></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
     <script>
-        function showSignUpForm() {
-            document.getElementById('sign-in').classList.remove('d-none');
-            document.getElementById('sign-in').scrollIntoView({ behavior: 'smooth' });
+        function toggleForms(formToShow) {
+            var signUpSection = document.getElementById('sign-in');
+            var loginSection = document.getElementById('loginSection');
+
+            if (formToShow === 'login') {
+                signUpSection.classList.add('d-none');
+                loginSection.classList.remove('d-none');
+            } else {
+                loginSection.classList.add('d-none');
+                signUpSection.classList.remove('d-none');
+            }
         }
         
         function validateForm(event) {
@@ -90,6 +100,19 @@
             }
 
             if (isValid) {
+                window.location.href = 'home.html';
+            } else {
+                alert('Please fill in all the fields.');
+            }
+        }
+
+        function validateLoginForm(event) {
+            event.preventDefault();
+            var form = document.getElementById('loginForm');
+            var email = form.loginEmail.value.trim();
+            var password = form.loginPassword.value.trim();
+
+            if (email && password) {
                 window.location.href = 'home.html';
             } else {
                 alert('Please fill in all the fields.');
