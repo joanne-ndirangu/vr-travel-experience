@@ -28,9 +28,13 @@
                             <label for="email" class="form-label">Email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@gmail.com" required>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="phone" class="form-label">Phone:</label>
                             <input type="text" class="form-control" id="phone" name="phone" placeholder="+254 712 345 678" required>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="loginPassword" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="loginPassword" name="password" required>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-submit" value="Sign Up">
@@ -67,10 +71,12 @@
                         <p class="sign-up"><u>Don't have an account? <a href="#" class="text-white" onclick="toggleForms('sign-in')">Sign Up</a></u></p>
                     </form>
                 </div>
-            </div>
+                <!-- <div class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                </div> -->
+            </div> 
         </div>
     </section>
-
     <script>
         function toggleForms(formToShow) {
             var signUpSection = document.getElementById('sign-in');

@@ -344,6 +344,14 @@ input {
     display: none;
 }
 
+.links {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #sign-in, #loginSection {
     overflow: hidden;
     margin: 15px;
@@ -444,86 +452,99 @@ footer {
 
 
 @media (max-width: 768px) {
-.information h1 {
-    font-size: 48px;
-}
-.btn {
-    display: flex;
-    align-items: center;
-    margin: 50px 120px;
-}
-.slogan {
-    width: 250px;
-    margin: 20px 0;
-    font-size: 32px;
-    font-style: italic;
-}
-.img-fluid {
-    height: 50vh;
-}
-.img-about {
-    width: 45vw;
-    height: 90vh;
-}
-.links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 70%;
-    transition: right 0.75s ease-out;
-    height: 100%;
-    padding-top: 60px; 
-}
+    body {
+        width: 100%;
+    }
+    .information {
+        padding-left: 20px;
+    }
+    .information h1 {
+        font-size: 48px;
+    }
+    .btn {
+        display: flex;
+        align-items: center;
+        margin: 50px 120px;
+    }
+    .btn-explore {
+        font-size: 18px;
+    }
+    .slogan {
+        width: 250px;
+        margin: 20px 0;
+        font-size: 32px;
+        font-style: italic;
+    }
+    .img-fluid {
+        height: 50vh;
+    }
+    .img-about {
+        width: 45vw;
+        height: 90vh;
+    }
+    .links {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 20%;
+        transition: right 0.75s ease-out;
+        height: 100%;
+        padding-top: 60px; 
+        background-color: rgba(255, 255, 255, 0.929);
+    }
 
-nav {
-    justify-content: space-between;
-    padding: 0 20px;
-    display: flex;
-    align-items: center; /* Ensures logo and hamburger menu are vertically aligned */
-    width: 100%;
-}
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+        display: flex;
+        align-items: center; /* Ensures logo and hamburger menu are vertically aligned */
+        width: 100%;
+    }
 
-nav a {
-    box-sizing: border-box;
-    height: auto;
-    width: 100%;
-    padding: 20px;
-    justify-content: flex-start;
-}
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: auto;
+        padding: 20px;
+        justify-content: flex-start;
+    }
 
-.open-sidebar {
-    display: inline-block;
-    cursor: pointer;
-    margin-left: auto; /* Aligns the hamburger menu to the right */
-}
+    .open-sidebar {
+        display: inline-block;
+        cursor: pointer;
+        margin-left: auto; /* Aligns the hamburger menu to the right */
+    }
 
-#sidebar {
-    display: none;
-}
+    #sidebar {
+        display: none;
+    }
 
-#sidebar:checked ~ .links {
-    right: 0;
-}
+    #sidebar:checked ~ .links {
+        right: 0;
+    }
 
-#sidebar:checked ~ #overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-}
+    #sidebar:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        /* display: block; */
+    }
 
-.close-sidebar {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
+    .close-sidebar {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .menu {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 320px) {
@@ -538,6 +559,12 @@ nav a {
         font-size: 23px;
         text-wrap: nowrap;
     }
+    .information {
+        padding-left: 10px;
+    }
+    .info {
+        padding-left: 10px;
+    }
     .btn {
         display: flex;
         align-items: center;
@@ -545,31 +572,32 @@ nav a {
         width: auto;
     }
     .btn-explore {
-        font-size: 16px;
+        font-size: 14px;
         width: auto; 
         white-space: nowrap; 
     }
-    .slogan {
+    .slogan h3{
         width: 200px;
         margin: 20px 0;
-        font-size: 20px;
+        font-size: 19px;
         font-style: italic;
+    }
+    .sign-up a {
+        font-size: 13px;
     }
     .socials {
         display: none;
         /* margin-top: 20px;  */
         /* width: 20px; */
     }
-    .header, .footer {
+    .header {
         padding: 0.5rem;
     }
     #about {
         text-align: center;
     }
     .img-about {
-        width: 80vw; 
-        height: 50vh;
-        margin: 0 auto; 
+        display: none;
     }
     .img-fluid {
         height: 30vh;
@@ -602,12 +630,11 @@ nav a {
         font-size: 0.75rem; 
         padding: 0.5rem; 
     }
-
-    .container {
-        padding-left: 30px;
+    /* .container { */
+        /* padding-left: 30px; */
         /* padding: 0.5rem; */
         /* text-align: center; */
-    }
+    /* } */
     #destinations {
         margin-right: 10px;
     }
@@ -616,5 +643,38 @@ nav a {
     }
     #profile img {
         display: none;
+    }
+    .cont {
+        display: block;
+        /* margin: 0; */
+    }
+    .mission {
+        font-size: 12px;
+    }
+    .hr {
+        font-size: 12px;
+    }
+    .contact1 h3 {
+        font-size: 17px;
+        padding-top: 10px;
+        margin: 0;
+    }
+    .contact1, .copyright {
+        font-size: 15px;
+    }
+    .con {
+        padding-top: 0;
+    }
+    .contact2 a {
+        margin-bottom: 5px;
+    }
+    main {
+        margin: 5px;
+    }
+    .menu {
+        font-size: 5px;
+    }
+    .links {
+        width: 40%;
     }
 }
